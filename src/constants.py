@@ -1,0 +1,34 @@
+"""Constants, mainly holding the maximum and minimum values for each feature for use in denormalization"""
+
+WPM_PREV_MAX = 57.51
+WPM_PREV_MIN = 30.91
+
+WPM_MAX = 57.51
+WPM_MIN = 30.91
+
+SILVER_PREV_MAX = 29.3
+SILVER_PREV_MIN = 16.99
+
+SILVER_MAX = 29.3
+SILVER_MIN = 16.99
+
+PALLADIUM_MAX = 2099.0
+PALLADIUM_MIN = 863.5
+
+OIL_MAX = 93.78
+OIL_MIN = 66.62
+
+TREASURY_MAX = 5.78
+TREASURY_MIN = 3.08
+
+MONTH_MAX = 12
+MONTH_MIN = 1
+
+GLD_LTD_MAX = 224.77
+GLD_LTD_MIN = 150.699
+
+GLD_MAX = 224.77
+GLD_MIN = 150.699
+
+TRAIN_MAX = 224.77
+TRAIN_MIN = 150.699

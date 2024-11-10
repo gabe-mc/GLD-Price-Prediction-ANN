@@ -2,7 +2,7 @@
 
 import torch
 
-from src.model import GLDPredictor
+from model import GLDPredictor
 from data_transformation import denormalize, normalize_inputs
 
 
@@ -37,5 +37,3 @@ def predict(WPM_prev, WPM, silver_prev, silver, palladium, oil, treasury_bill, m
         prediction = model(input_tensor)
     
     return denormalize(prediction.item())
-
-print("Predicted GLD spot price: $" + str(predict(50.06, 50, 22.17, 22.1, 1002.5, 71.71, 5.31, 12, 192.34)) + " ...it should have been $190.99")

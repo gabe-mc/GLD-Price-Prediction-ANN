@@ -3,7 +3,7 @@
 import pandas as pd
 import math
 
-import src.constants as constants
+import constants as constants
 
 def normalize(data: pd.DataFrame) -> pd.DataFrame:
     """

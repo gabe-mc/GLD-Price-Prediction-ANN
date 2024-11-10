@@ -8,7 +8,7 @@ import torch.nn.functional as F
 import torch.utils.data as D
 
 from data_transformation import normalize, split
-from src.tensor import Tensor
+from tensor import Tensor
 
 # Import data
 

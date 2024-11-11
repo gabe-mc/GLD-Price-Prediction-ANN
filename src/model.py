@@ -31,10 +31,8 @@ training_features = training_data.drop("GLD Price", axis=1)
 
 batch_size = 64
 
-
 train_tensor = Tensor(features=training_features.infer_objects(), target= training_target.infer_objects())
 train_dataloader = D.DataLoader(dataset=train_tensor, batch_size=batch_size, shuffle=False)
-
 test_tensor = Tensor(features=testing_features.infer_objects(), target=testing_target.infer_objects())
 test_dataloader = D.DataLoader(dataset=test_tensor, batch_size=batch_size, shuffle=False)
 
@@ -61,10 +59,8 @@ class GLDPredictor(nn.Module):
     
 # Training GLDPredictor on our training data
 
-model = GLDPredictor()
-
-# # Instantiate our loss function
-
+# Params:
+# model = GLDPredictor()
 # learning_rate = 0.001
 # loss_function = nn.L1Loss() # Mean absoloute error
 # optimizer = torch.optim.Adam(model.parameters(), learning_rate)
@@ -93,46 +89,5 @@ model = GLDPredictor()
 
 # print(f"Training Complete. Final loss: {loss_values[-1]}")
 
-# Save the trained model
-
+# Save the trained model (commented out)
 # torch.save(model.state_dict(), "models/GLDtrained2.plt")
-
-# Validate our model
-
-# def validate_model(model, val_dataloader):
-    
-#     losses = []
-#     # Define the loss function
-#     loss_function = nn.L1Loss()
-
-#     # Track total loss
-#     total_loss = 0.0
-#     num_batches = 0
-
-#     with torch.no_grad():
-#         for features, target in val_dataloader:
-
-#             # Forward pass
-#             prediction = model(features)
-#             loss = loss_function(prediction, target.unsqueeze(-1))
-#             total_loss += 1
-#             losses.append(loss.item())
-#             num_batches += 1
-
-#     # Average loss
-#     avg_loss = total_loss / num_batches
-#     print(f"Validation Complete. Average Loss: {avg_loss}")
-
-#     return losses
-
-
-# validation_loss = validate_model(model, test_dataloader)
-
-# Plotting loss function
-
-# x0 = list(range(1, len(validation_loss)+1))
-# plt.figure(figsize=(5, 2))
-# plt.plot(x0, validation_loss, label='Validation loss')
-# plt.title('Validation loss')
-# plt.legend()
-# plt.show()

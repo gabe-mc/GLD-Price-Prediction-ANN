@@ -1,12 +1,14 @@
 """FMP API to download real time stock prices"""
 
 import requests
+import os
 from datetime import datetime
 from datetime import timedelta
 
-api_key = "7PUXRnPbbIlTyRlU5PblgwJrvcODH8Qe"
+api_key = os.environ.get('API_Key')
 
-def get_price(ticker: str, prev=False, apikey="7PUXRnPbbIlTyRlU5PblgwJrvcODH8Qe") -> float:
+
+def get_price(ticker: str, prev=False, apikey=api_key) -> float:
     """
     Gets the closing price of the given stock or commodity, on today's date.
 

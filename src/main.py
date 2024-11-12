@@ -24,7 +24,9 @@ def main():
     month = int(datetime.now().strftime("%m"))
     GLD_prev = get_price("GLD", True)
 
-    print("Today's GLD Price prediction:", round(predict(WPM_prev, WPM, silver_prev, silver, palladium, oil, treasury_bill, month, GLD_prev), 2))
+    print("Today's GLD Price prediction:", round(predict(WPM_prev, WPM,
+          silver_prev, silver, palladium, oil, treasury_bill, month, GLD_prev), 2))
+
 
 if __name__ == "__main__":
     main()

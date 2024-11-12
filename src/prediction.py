@@ -6,10 +6,10 @@ from model import GLDPredictor
 from data_transformation import denormalize, normalize_inputs
 
 
-def predict(WPM_prev, WPM, silver_prev, silver, palladium, oil, treasury_bill, month, GLD_prev)-> float:
+def predict(WPM_prev, WPM, silver_prev, silver, palladium, oil, treasury_bill, month, GLD_prev) -> float:
     """
     Uses the GLDPredictor ANN model to predict the closing price of the SPDR Gold Trust ETF ($GLD).
-    
+
     Args:
         WPM_prev: The previous previous trading day's closing price for Wheaton Precious Metals Corp. ($WPM).
         WPM: The previous trading day's closing price for $WPM.
@@ -26,14 +26,20 @@ def predict(WPM_prev, WPM, silver_prev, silver, palladium, oil, treasury_bill, m
     """
     # Instantiate model
     model = GLDPredictor()
-    model.load_state_dict(torch.load("models/GLDPredictor_model.plt", weights_only=False))
+    model.load_state_dict(torch.load(
+        "models/GLDPredictor_model.plt", weights_only=False))
     model.eval()
 
     # Creating an input tensor
-    input_tensor = torch.tensor(normalize_inputs(WPM_prev, WPM, silver_prev, silver, palladium, oil, treasury_bill, month, GLD_prev), dtype=torch.double)
+    input_tensor = torch.tensor(normalize_inputs(
+        WPM_prev, WPM, silver_prev, silver, palladium, oil, treasury_bill, month, GLD_prev), dtype=torch.double)
     print(input_tensor.dtype)
     # Predict
     with torch.no_grad():
         prediction = model(input_tensor)
-    
+
     return denormalize(prediction.item())
+
+
+d = predict(57.36, 56.15, 29.3, 27.93, 955, 80.26, 5.27, 5, 218.43)
+print(d, "Accuracy:", (abs((216.92 - d))/d)*100)

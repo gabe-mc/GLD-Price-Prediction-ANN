@@ -34,8 +34,6 @@ def denormalize(normalized_value: float)-> float:
     origial real-world data.
 
     Args:
-        train_max: The maximum value within the test features or target dataframe which was used in normalization.
-        train_min: The minmum value within the test features or target dataframe which was used in normalization.
         normalized_value: A float which is the result of our ANN predictor, which needs to be rescaled up (denormalized).
 
     Returns:

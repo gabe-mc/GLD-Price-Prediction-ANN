@@ -4,16 +4,6 @@
 This project aims to predict the price of the SPDR Gold Shares ETF ($GLD) using an Abstract Neural Network. Predictions are made using data from a collection of related stocks and commodities' closing prices from the end of the trading session, effectivly forcasing the next trading day's closing price for $GLD. 
 
 This project combines findings from several research papers written on the modeling of deep-learning gold pricing models, which are [referenced below](#references).
-
-## Table of Contents
-
-1. [Dataset](#dataset)
-2. [Model Architecture](#model-architecture)
-3. [Training Process](#training-process)
-4. [Results](#results)
-5. [Installation](#installation)
-6. [Usage](#usage)
-7. [References](#references)
    
 ## Dataset
 The training data for this model was largly chosen based off a coorelation analysis performed in Iftikhar ul Sami's *Predicting Future Gold Rates using Machine Learning Approach*, which ranked the stock price of Wheaton Precious Metals ($WPM) as the item with higest correlation in their sample. Their other highly ranked items included the spot price of silver, oil, and palladium, as well as the US Treasury's 4 Week bill rate. 

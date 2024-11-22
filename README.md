@@ -39,6 +39,9 @@ The Mean Absolute Error (MAE) loss function (torch.L1Loss) calculates the error 
 The Adam optimizer adjusts model weights to minimize the loss.
 Training was run for 700,000 epochs with loss values recorded to monitor performance.
 
+![Training_loss_GLD](https://github.com/user-attachments/assets/cb6e8c8b-ab1e-464a-8a98-61ab9b92249c)
+
+
 ## Results
 Using the 15% of the original dataset that was set aside for prediciton, this model is able to predict the price of GLD within a 2% margin of error.
 ## Installation
@@ -55,7 +58,7 @@ cd project-directory
 pip install -r requirements.txt
 ```
 ## Usage
-For usage of the model, the Predict function in ```Predictor.py is`` able to predict the next GLD price based on the parameters fed to the function. If you connect your own API key for Financial Modelling Prep (in an enviroment variable called API_Key), the ```main.py``` file can be run, which will print the current day's GLD prediction. 
+For usage of the model, the Predict function in ```Predictor.py is``` able to predict the next GLD price based on the parameters fed to the function. If you connect your own API key for Financial Modelling Prep (in an enviroment variable called API_Key), the ```main.py``` file can be run, which will print the current day's GLD prediction. 
 
 ## References
 

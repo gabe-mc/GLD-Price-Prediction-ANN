@@ -43,7 +43,9 @@ Training was run for 700,000 epochs with loss values recorded to monitor perform
 
 
 ## Results
-Using the 15% of the original dataset that was set aside for prediciton, this model is able to predict the price of GLD within a 2% margin of error.
+Using the 15% of the original dataset that was set aside for prediciton, this model is able to predict the price of $GLD within a 1.5% average error, or ~$3 USD price deviation between the model's prediction and the realized value.
+![predictionError](https://github.com/user-attachments/assets/7c27e64c-16a5-4abf-8241-79dbcd8a3f6d)
+
 ## Installation
 Instructions for setting up the environment and installing necessary libraries.
 

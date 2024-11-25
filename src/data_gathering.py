@@ -2,10 +2,13 @@
 
 import requests
 import os
+
+from dotenv import load_dotenv
 from datetime import datetime
 from datetime import timedelta
 
-api_key = os.environ.get('API_Key')
+load_dotenv()
+api_key = os.getenv('API_Key')
 
 
 def get_price(ticker: str, prev=False, apikey=api_key) -> float:

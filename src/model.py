@@ -10,6 +10,9 @@ import torch.utils.data as D
 from data_transformation import normalize, split
 from tensor import Tensor
 
+import matplotlib.pyplot as plt
+import numpy as np
+
 # Import data
 
 data = pd.read_csv("data/training_data.csv")
@@ -34,7 +37,7 @@ batch_size = 64
 train_tensor = Tensor(features=training_features.infer_objects(), target= training_target.infer_objects())
 train_dataloader = D.DataLoader(dataset=train_tensor, batch_size=batch_size, shuffle=False)
 test_tensor = Tensor(features=testing_features.infer_objects(), target=testing_target.infer_objects())
-test_dataloader = D.DataLoader(dataset=test_tensor, batch_size=batch_size, shuffle=False)
+test_dataloader = D.DataLoader(dataset=test_tensor, shuffle=False)
 
 # Creating our prediction ANN
 
@@ -56,38 +59,3 @@ class GLDPredictor(nn.Module):
         x = F.relu(self.output(x))
 
         return x
-    
-# Training GLDPredictor on our training data
-
-# Params:
-# model = GLDPredictor()
-# learning_rate = 0.001
-# loss_function = nn.L1Loss() # Mean absoloute error
-# optimizer = torch.optim.Adam(model.parameters(), learning_rate)
-
-# # Our training loop
-
-# epochs = 1000000
-# loss_values = []
-
-# for epoch in range(epochs):
-#     for features, target in train_dataloader:
-#         optimizer.zero_grad()
-
-#         # Forward pass
-#         prediction = model(features)
-#         loss = loss_function(prediction, target.unsqueeze(-1))
-#         loss_values.append(loss.item())
-
-#         # Backward pass + optimization
-#         loss.backward()
-#         optimizer.step()
-
-#         # Print out loss
-#     if epoch % 10 == 0:
-#         print(loss.item())
-
-# print(f"Training Complete. Final loss: {loss_values[-1]}")
-
-# Save the trained model (commented out)
-# torch.save(model.state_dict(), "models/GLDtrained2.plt")

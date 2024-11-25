@@ -39,7 +39,3 @@ def predict(WPM_prev, WPM, silver_prev, silver, palladium, oil, treasury_bill, m
         prediction = model(input_tensor)
 
     return denormalize(prediction.item())
-
-
-d = predict(57.36, 56.15, 29.3, 27.93, 955, 80.26, 5.27, 5, 218.43)
-print(d, "Accuracy:", (abs((216.92 - d))/d)*100)

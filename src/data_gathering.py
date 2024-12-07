@@ -30,7 +30,7 @@ def get_price(ticker: str, prev=False, apikey=api_key) -> float:
     if datetime.now().strftime("%A") == "Sunday":
         date = (datetime.now() - timedelta(days=(2 + time_offset))).strftime("%Y-%m-%d")
     else:
-        date = (datetime.now() - timedelta(days=(1 + time_offset)).strftime("%Y-%m-%d"))
+        date = (datetime.now() - timedelta(days=(1 + time_offset))).strftime("%Y-%m-%d")
     url = "https://financialmodelingprep.com/api/v3/historical-price-full/" + \
         ticker + "?from=" + date + "&apikey=" + apikey
     req = requests.get(url)
